@@ -135,7 +135,7 @@ console.log(props);
         </counterContext.Provider>
 
         {/*default props */}
-        {/*{props.title}*/}
+        {props.title}
 
 
       </>
