@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    color: rgb(71, 98, 173);
+    font-size: larger;
+    text-align: center;
+}
+.card{
+    background-color: rgb(211, 193, 170);
+    width: 300px;
+    min-height: 100px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    
+}
+.card:hover{
+    background-color: beige;
+    cursor: pointer;
+}
+.cardTitle{
+    text-align: center;
+    border-bottom: 1px solid rgb(126, 100, 100);
+    margin-bottom: 10px;
+    color: rgb(37, 37, 37);
+}
+.cardDes{
+    text-align: justify;
+    margin-bottom: 5px;
+}
+.cardFooter{
+    text-align: justify;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
