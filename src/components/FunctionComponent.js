@@ -1,5 +1,6 @@
 import React, {useReducer, useState} from "react";
 import ChildComponent from "./ChildComponent";
+import Proptypes from "prop-types";
 
 const initialState = 0;
 
@@ -146,6 +147,9 @@ console.log(props);
 
  FunctionComponent.defaultProps = {
   title: 'Default Props'
+ }
+ FunctionComponent.Proptypes = {
+  title: Proptypes.string,
  }
  
  export default FunctionComponent
