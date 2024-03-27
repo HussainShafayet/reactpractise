@@ -3,7 +3,6 @@ import './App.css';
 import Card from './components/Card';
 import Class_practise from './components/Practise_class'
 import Practise_function from './components/Practise-function'
-import Data from './Data.json'
 import Arrow from './components/Arrow_function'
 // import Counters from './components/counters'
 import Test from './components/test'
@@ -24,8 +23,7 @@ function App() {
   for (let x=0; x<Data.length;x++ ){
     items.push(<Practise_function name={Data[x].Name} age={Data[x].age} />)
   } */
-  let items=[]
-  items=Data.map((item,index)=> <Practise_function key={index} name={item.Name} and age={item.age} />);
+ 
 
   return (
     <div>
