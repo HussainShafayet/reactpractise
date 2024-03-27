@@ -22,7 +22,7 @@ const KeyCounter = (OriginalComponent) => {
 //    }
 //  }
 
- function NewCoponent() {
+ function KeyCounter() {
     const [count, setCount] = useState(0);
     const handleInput = (e)=>{
         setCount(e.target.value.length);
@@ -32,7 +32,7 @@ const KeyCounter = (OriginalComponent) => {
   )
 }
 
-  return NewCoponent;
+  return KeyCounter;
   
 }
 
