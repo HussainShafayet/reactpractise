@@ -1,5 +1,7 @@
 import React, {useReducer, useState} from "react";
 import ChildComponent from "./ChildComponent";
+import NameInputCounter from "./NameInputCounter";
+import BalanceInputCounter from "./BalanceInputCounter";
 
 const initialState = 0;
 
@@ -127,16 +129,17 @@ console.log(props);
         {status === 'success' && <>
           You are gneous
         </>}*/}
-        <button className="btn" onClick={()=>handleClick('decrement')}>Decrement</button>
+        {/*<button className="btn" onClick={()=>handleClick('decrement')}>Decrement</button>
 
         <span className="text-success">Count: {count}</span>
         <counterContext.Provider value={{counterDispatch: handleClick}}>
           <ChildComponent /> 
-        </counterContext.Provider>
+        </counterContext.Provider>*/}
 
         {/*default props */}
         {/*{props.title}*/}
-
+        <NameInputCounter />
+        <BalanceInputCounter />
 
       </>
       
