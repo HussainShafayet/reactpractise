@@ -140,7 +140,7 @@ console.log(props);
         {/*default props */}
         {/*{props.title}*/}
         {/*<NameInputCounter />*/}
-        <UserProvider value="Shafayet" >
+        <UserProvider value={{name:'Babu'}} >
           <BalanceInputCounter />
         </UserProvider>
         

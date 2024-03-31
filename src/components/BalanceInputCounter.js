@@ -9,9 +9,9 @@ const BalanceInputCounter = (props) => {
         <input type='number' onInput={handleInput} />
         total: {count}
         <UserConsumer>
-          {(username)=>{
+          {({name})=>{
             return (<div>
-              Welcome {username} 
+              Welcome {name} 
             </div>)
           }}
         </UserConsumer>
