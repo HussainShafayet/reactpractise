@@ -2,6 +2,7 @@ import React, {useReducer, useState} from "react";
 import ChildComponent from "./ChildComponent";
 import NameInputCounter from "./NameInputCounter";
 import BalanceInputCounter from "./BalanceInputCounter";
+import {UserProvider} from "../contexts/userContext";
 
 const initialState = 0;
 
@@ -138,8 +139,11 @@ console.log(props);
 
         {/*default props */}
         {/*{props.title}*/}
-        <NameInputCounter />
-        <BalanceInputCounter />
+        {/*<NameInputCounter />*/}
+        <UserProvider value="Shafayet" >
+          <BalanceInputCounter />
+        </UserProvider>
+        
 
       </>
       
