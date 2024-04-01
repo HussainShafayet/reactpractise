@@ -156,4 +156,4 @@ console.log(props);
  }
 
  
- export default FunctionComponent
+ export default React.memo(FunctionComponent)
