@@ -115,35 +115,6 @@ export const counterContext = React.createContext();
   dispatch(value);
  }
 
-const balanceList = [
-  { id: 1, balance: 2, trx_gl: { gl_id: 1, balance: 5 } },
-  { id: 2, balance: 3, trx_gl: { gl_id: 2, balance: 1 } },
-  { id: 3, balance: 4, trx_gl: { gl_id: 1, balance: 5 } },
-  { id: 4, balance: 10, trx_gl: { gl_id: 3, balance: 0 } },
-];
-
-let prevTrxGlTotalBalance = {};
-
-for (let i = 0; i < balanceList.length; i++) {
-  const item = balanceList[i];
-  const trxGlId = item.trx_gl.gl_id;
-  const trxGlBalance = (prevTrxGlTotalBalance[trxGlId] || item.trx_gl.balance) + item.balance;
-
-  // Update glNewBalance and glCurrentBalance
-  item.glNewBalance = trxGlBalance;
-  item.glCurrentBalance = (prevTrxGlTotalBalance[trxGlId] || item.trx_gl.balance) ;
-  
-  item.trx_gl[`glNewBalance${item.id}`] = item.glNewBalance;
-  item.trx_gl[`glCurrentBalance${item.id}`] = item.glCurrentBalance;
-
-  // Update prevTrxGlTotalBalance
-  prevTrxGlTotalBalance[trxGlId] = trxGlBalance;
-}
-
-console.log(balanceList);
-
-
-
   return(
       <>
         {/*<h2>City Quiz!</h2>
