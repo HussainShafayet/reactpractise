@@ -1,6 +1,4 @@
 import React, {useReducer, useState} from "react";
-import ChildComponent from "./ChildComponent";
-import NameInputCounter from "./NameInputCounter";
 import BalanceInputCounter from "./BalanceInputCounter";
 import {UserProvider} from "../contexts/userContext";
 
