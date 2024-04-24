@@ -134,7 +134,7 @@ export const counterContext = React.createContext();
           <ChildComponent /> 
         </counterContext.Provider>*/}
 
-        {/*default props */}
+       
         {/*{props.title}*/}
         {/*<NameInputCounter />*/}
         <UserProvider value={{name:'Babu'}} >
