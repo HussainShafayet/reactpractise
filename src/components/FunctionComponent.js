@@ -137,7 +137,7 @@ export const counterContext = React.createContext();
        
         {/*{props.title}*/}
         {/*<NameInputCounter />*/}
-        <UserProvider value={{name:'Babu'}} >
+        <UserProvider value={{name:'Shafu'}} >
           <BalanceInputCounter />
         </UserProvider>
         
