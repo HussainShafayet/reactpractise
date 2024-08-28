@@ -2,14 +2,28 @@ import React, {useReducer, useState} from "react";
 import BalanceInputCounter from "./BalanceInputCounter";
 import {UserProvider} from "../contexts/userContext";
 
-const initialState = 0;
+//const initialState = 0;
 
-const reducer = (state, action)=>{ 
+//const reducer = (state, action)=>{ 
+//  switch (action) {
+//    case 'increment':
+//      return state + 1;
+//    case 'decrement':
+//      return state - 1;
+//    default:
+//      return state;
+//  }
+//}
+
+const initialState = 0;
+function reducer(state, action) {
   switch (action) {
-    case 'increment':
+    case 'increase':
       return state + 1;
-    case 'decrement':
+    case 'decrease':
       return state - 1;
+    case 'reset':
+      return initialState;
     default:
       return state;
   }
@@ -108,10 +122,12 @@ export const counterContext = React.createContext();
 
   // use reducer
 
- const [count, dispatch] = useReducer(reducer, initialState);
- const handleClick = (value)=>{
-  dispatch(value);
- }
+// const [count, dispatch] = useReducer(reducer, initialState);
+// const handleClick = (value)=>{
+//  dispatch(value);
+// }
+
+const [count, dispatch] = useReducer(reducer, initialState);
 
   return(
       <>
@@ -140,6 +156,11 @@ export const counterContext = React.createContext();
         <UserProvider value={{name:'Shafu'}} >
           <BalanceInputCounter />
         </UserProvider>
+        <br></br>
+        count: {count}<br></br>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch('increase')}>Increase</button>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch('decrease')}>Decrese</button>
+        <button className="btn btn-primary " onClick={()=> dispatch('reset')}>Reset</button>
         
 
       </>
