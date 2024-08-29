@@ -15,17 +15,24 @@ import {UserProvider} from "../contexts/userContext";
 //  }
 //}
 
-const initialState = 0;
+const initialState = {
+  value: 0,
+  value2:0
+};
 function reducer(state, action) {
-  switch (action) {
+  switch (action.type) {
     case 'increase':
-      return state + 1;
+      return {...state, value: state.value + action.value};
     case 'decrease':
-      return state - 1;
+      return {...state, value: state.value - action.value};
+    case 'increase2':
+      return {...state, value2: state.value2 + action.value};
+    case 'decrease2':
+      return {...state, value2: state.value2 - action.value};
     case 'reset':
       return initialState;
     default:
-      return state;
+      throw new Error()
   }
 }
 
@@ -157,10 +164,15 @@ const [count, dispatch] = useReducer(reducer, initialState);
           <BalanceInputCounter />
         </UserProvider>
         <br></br>
-        count: {count}<br></br>
-        <button className="btn btn-primary mr-1" onClick={()=> dispatch('increase')}>Increase</button>
-        <button className="btn btn-primary mr-1" onClick={()=> dispatch('decrease')}>Decrese</button>
-        <button className="btn btn-primary " onClick={()=> dispatch('reset')}>Reset</button>
+        count: {count.value}<br></br>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'increase',value:2})}>Increase 2</button>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'decrease', value:2})}>Decrese 2</button>
+        <button className="btn btn-primary " onClick={()=> dispatch({type:'reset'})}>Reset</button>
+        <br></br>
+        count: {count.value2}<br></br>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'increase2',value:5})}>Increase 5</button>
+        <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'decrease2', value:5})}>Decrese 5</button>
+        <button className="btn btn-primary " onClick={()=> dispatch({type:'reset'})}>Reset</button>
         
 
       </>
