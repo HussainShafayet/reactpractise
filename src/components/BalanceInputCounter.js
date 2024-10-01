@@ -6,7 +6,7 @@ const BalanceInputCounter = (props) => {
     const {count, handleInput} = props;
     const [lists, setList] = useState([]);
     useEffect(() => {
-      setList([...lists, {name: 'Rahim'}]);
+      setList([...lists, {name: 'Karim'}]);
     }, [])
     console.log('list', lists);
     
