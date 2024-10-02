@@ -173,9 +173,39 @@ const [count, dispatch] = useReducer(reducer, initialState);
         <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'increase2',value:5})}>Increase 5</button>
         <button className="btn btn-primary mr-1" onClick={()=> dispatch({type:'decrease2', value:5})}>Decrese 5</button>
         <button className="btn btn-primary " onClick={()=> dispatch({type:'reset'})}>Reset</button>
-        
+
+        {/* 
+
+         const Grettings = ({name})=>{
+          const [count, setCount] = useState(0);
+          return(
+            <div>
+              Hello name {name};
+              <button onClick={()=>setCount(count+1)}>click count: {count}</button>
+            </div>
+          )
+         }   
+
+        useEffet(()=>{
+        fetchData();
+        }, [])
+
+        //class
+        class Example extends Rect.Component{
+        compunentDidMount();
+
+        }
+        const ThemeContext = React.createContext();
+        const App = ()=>{
+          <ThemeContext.Provider value={color:"black"}>
+          <ToolBar />
+          </ThemeContext.Provider>
+        }
+        */}
 
       </>
+
+     
       
       
   )
