@@ -201,6 +201,9 @@ const [count, dispatch] = useReducer(reducer, initialState);
           <ToolBar />
           </ThemeContext.Provider>
         }
+
+        //form data set
+        setUser({...user, [e.target.name]: e.target.value})
         */}
 
       </>
