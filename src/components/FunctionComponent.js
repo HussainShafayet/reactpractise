@@ -1,6 +1,8 @@
 import React, {useReducer, useState} from "react";
 import BalanceInputCounter from "./BalanceInputCounter";
 import {UserProvider} from "../contexts/userContext";
+import B from "./B";
+import Acontext from "./A";
 
 //const initialState = 0;
 
@@ -205,6 +207,13 @@ const [count, dispatch] = useReducer(reducer, initialState);
         //form data set
         setUser({...user, [e.target.name]: e.target.value})
         */}
+        <br />
+       {/*<ThemeProvider value={{color: 'red'}}>
+        <B />
+       </ThemeProvider>*/}
+       <Acontext.Provider value={{count: 0}} >
+        <B></B>
+       </Acontext.Provider>
 
       </>
 
