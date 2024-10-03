@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useRef} from 'react'
 import Acontext from './A';
 import {useReducer} from 'react';
 const initialState = {
@@ -17,10 +17,16 @@ function reducer(state, action) {
 const B = () => {
     //const {count} = useContext(Acontext);
     //console.log('const', count);
-    const [count, dispatch] = useReducer(reducer, initialState)
+    const [count, dispatch] = useReducer(reducer, initialState);
+    const inputRef = useRef(null);
+    useEffect(()=>{
+        inputRef.current.focus();
+    },[])
   return (
     <div>
         <button onClick={()=>dispatch({type:'increase',value:1})}>Click {count.value}</button>
+        <br></br>
+        <input ref={inputRef} />
     </div>
   )
 }
