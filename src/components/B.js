@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef} from 'react'
+import React, {Suspense, useContext, useEffect, useMemo, useRef} from 'react'
 import Acontext from './A';
 import {useReducer} from 'react';
 const initialState = {
@@ -21,12 +21,19 @@ const B = () => {
     const inputRef = useRef(null);
     useEffect(()=>{
         inputRef.current.focus();
-    },[])
+    },[]);
+    //const formattedData = useMemo(()=> {filtered(items)}, [items]);
+
+    //lazy component
+    const Lazycomponent = React.lazy(()=>import('./Card'))
   return (
     <div>
         <button onClick={()=>dispatch({type:'increase',value:1})}>Click {count.value}</button>
         <br></br>
         <input ref={inputRef} />
+        <Suspense fallback={<div>Loading....</div>}>
+            <Lazycomponent />
+        </Suspense>
     </div>
   )
 }
