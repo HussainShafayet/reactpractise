@@ -107,6 +107,9 @@ function App() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [seachQuery, setSearchQuery] = useState('');
+    const [filteredUser, setFilteredUser] = useState([])
+
     useEffect(() => {
       const fetchApi = async ()=>{
         try {
@@ -126,10 +129,18 @@ function App() {
       fetchApi();
     }, []);
 
+    const handleSearch = (e) =>{
+      setSearchQuery(e.target.value);
+      const filtered = users.filter((user) => user['firstName'].toLowerCase().includes(seachQuery.toLowerCase()));
+      setFilteredUser(filtered);
+      
+    }
+
     return (
       <div>
+        <input type='text' value={seachQuery} onChange={handleSearch} />
         {isLoading? 'Loading....' :
-          users.map((user)=> (
+          (seachQuery?filteredUser: users).map((user)=> (
             <>
               <span key={user.id}>First Name: {user.firstName}</span><br />
             </>
@@ -165,7 +176,7 @@ function App() {
       {/*<Counter />*/}
       {/*<ToggleText />*/}
       {/*<FormInput />*/}
-      {/*<FetchData />*/}
+      <FetchData />
     </div>
   );
 }
