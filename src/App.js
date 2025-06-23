@@ -139,7 +139,7 @@ function App() {
     return (
       <div>
         <input type='text' value={seachQuery} onChange={handleSearch} />
-        {isLoading? 'Loading....' :
+        {isLoading? 'Loading.....' :
           (seachQuery?filteredUser: users).map((user)=> (
             <>
               <span key={user.id}>First Name: {user.firstName}</span><br />
